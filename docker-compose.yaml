@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: conduit_backend
+    env_file:
+      - backend/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - backend_data:/app
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: conduit_frontend
+    ports:
+      - "8282:80"
+    depends_on:
+      - backend
+    restart: always
+
+  db:
+    image: postgres:15
+    container_name: conduit_db
+    environment:
+      POSTGRES_DB: conduit
+      POSTGRES_USER: conduit
+      POSTGRES_PASSWORD: conduit
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
+  backend_data:
