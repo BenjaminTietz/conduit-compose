@@ -13,7 +13,10 @@ services:
     restart: always
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        API_URL: "http://localhost:8000/api"
     container_name: conduit_frontend
     ports:
       - "8282:80"

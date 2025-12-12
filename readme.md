@@ -16,10 +16,25 @@
 
 This repository provides a fully containerized setup for the **Conduit** full‑stack application  
 (Angular frontend + Django REST backend) using Docker Compose.  
-It is built according to DevSecOps best practices, using submodules, environment-variable management,  
-multi‑stage builds, and clean container orchestration.
+It demonstrates a practical containerization setup using Docker Compose,
+with a focus on understanding how frontend and backend services
+communicate in a real-world (and partly legacy) project.
 
 ---
+
+## ⚠️ Legal & Hosting Notice
+
+This project is intended for educational and local development purposes only.
+
+It is **not suitable for public hosting or production use**, as it does not
+provide any GDPR-compliant features such as:
+
+- Privacy policy
+- Legal notice / imprint
+- Consent handling for personal data
+
+Do not deploy or expose this application publicly without adding the
+required legal and compliance-related components.
 
 ## Project Structure
 
@@ -72,6 +87,24 @@ Backend → http://localhost:8000
 Frontend → http://localhost:8282
 
 ---
+
+## Frontend (Angular) – Configuration Note
+
+The Angular frontend uses a static environment configuration.
+
+After cloning the repositories, the backend API base URL must be updated
+manually in the frontend environment file:
+
+Example:
+
+```ts
+export const environment = {
+  apiUrl: "http://backend:8000/api",
+};
+```
+
+This is a deliberate design choice for this legacy project to keep changes
+minimal and make configuration explicit at the application level.
 
 ## Environment Variables
 
