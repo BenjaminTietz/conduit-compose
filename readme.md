@@ -149,6 +149,18 @@ http://localhost:8282
 
 ---
 
+## Logging
+
+All services log to stdout/stderr and are managed by Docker's json-file logging driver.
+Log rotation is enabled to prevent excessive disk usage.
+
+Logs can be accessed via:
+
+```bash
+docker logs backend
+docker logs frontend
+```
+
 ## Contact
 
 ### 👤 Personal
@@ -163,3 +175,7 @@ http://localhost:8282
 ### 💻 Project Repository
 
 - https://github.com/BenjaminTietz/conduit-container
+
+```
+
+```
