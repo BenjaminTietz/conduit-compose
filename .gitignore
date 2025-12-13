@@ -1,0 +1,18 @@
+# Environment files
+.env
+.env.*
+!.env.template
+!.env.frontend.template
+
+# Node
+node_modules/
+
+# Angular build
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# Docker
+*.log
