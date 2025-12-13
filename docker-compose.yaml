@@ -3,7 +3,7 @@ services:
     build: ./backend
     container_name: conduit_backend
     env_file:
-      - ./backend/.env
+      - .env
     ports:
       - "8000:8000"
     depends_on:
@@ -15,6 +15,10 @@ services:
   frontend:
     build:
       context: ./frontend
+      args:
+        BACKEND_API_URL: ${BACKEND_API_URL}
+    env_file:
+      - .env
     container_name: conduit_frontend
     ports:
       - "8282:80"

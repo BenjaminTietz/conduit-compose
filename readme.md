@@ -70,8 +70,11 @@ git submodule update --init --recursive
 
 ### 2. Create your environment file
 
+All backend and frontend configuration values are defined in a single `.env`
+file located in the project root.
+
 ```sh
-cp backend/.env.template backend/.env
+cp .env.template .env
 ```
 
 Modify if needed.
@@ -89,29 +92,19 @@ Frontend → http://localhost:8282
 
 ---
 
-## Frontend (Angular) – Configuration Note
-
-The Angular frontend uses a static environment configuration.
-
-After cloning the repositories, the backend API base URL must be updated
-manually in the frontend environment file:
-
-Example:
-
-```ts
-export const environment = {
-  apiUrl: "http://backend:8000/api",
-};
-```
-
-This is a deliberate design choice for this legacy project to keep changes
-minimal and make configuration explicit at the application level.
-
 ## Environment Variables
 
 The container uses `.env` to configure Django and PostgreSQL:
 
 ```env
+# =====================
+# Frontend (Angular)
+# =====================
+BACKEND_API_URL=http://backend:8000/api
+
+# =====================
+# Backend (Django)
+# =====================
 DJANGO_SECRET_KEY=changeme
 DJANGO_DEBUG=True
 DJANGO_ALLOWED_HOSTS=*
@@ -120,9 +113,10 @@ CORS_ALLOWED_ORIGINS=http://localhost:8282,http://127.0.0.1:8282
 
 DB_NAME=conduit
 DB_USER=postgres
-DB_PASSWORD=changeme
+DB_PASSWORD=postgres
 DB_HOST=db
 DB_PORT=5432
+
 ```
 
 ---

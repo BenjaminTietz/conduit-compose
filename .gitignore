@@ -2,7 +2,7 @@
 .env
 .env.*
 !.env.template
-!.env.frontend.template
+
 
 # Node
 node_modules/
