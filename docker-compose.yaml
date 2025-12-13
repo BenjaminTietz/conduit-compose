@@ -29,13 +29,11 @@ services:
   db:
     image: postgres:15-alpine
     container_name: conduit_db
-    environment:
-      POSTGRES_DB: conduit
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+    env_file:
+      - .env
     volumes:
       - db_data:/var/lib/postgresql/data
-    restart: always
+    restart: on-failure
 
 volumes:
   db_data:
