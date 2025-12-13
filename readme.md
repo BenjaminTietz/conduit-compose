@@ -42,10 +42,9 @@ required legal and compliance-related components.
 conduit-container/
 ├── docker-compose.yaml
 ├── .gitmodules             # Submodules: backend + frontend
-├── backend/
-│ ├── .env.template         # Backend environment variable template
-│ └── ...                   # Django backend (git submodule)
+├── backend/                # Django backend (git submodule)
 ├── frontend/               # Angular frontend (git submodule)
+├── .env.template           # Environment variable template (root)
 └── README.md
 ```
 
