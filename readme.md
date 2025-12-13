@@ -41,10 +41,11 @@ required legal and compliance-related components.
 ```
 conduit-container/
 ├── docker-compose.yaml
-├── .env.template          # Template for environment variables
-├── .gitmodules           # Submodules: backend + frontend
-├── backend/              # Django backend (git submodule)
-├── frontend/             # Angular frontend (git submodule)
+├── .gitmodules             # Submodules: backend + frontend
+├── backend/
+│ ├── .env.template         # Backend environment variable template
+│ └── ...                   # Django backend (git submodule)
+├── frontend/               # Angular frontend (git submodule)
 └── README.md
 ```
 
@@ -70,7 +71,7 @@ git submodule update --init --recursive
 ### 2. Create your environment file
 
 ```sh
-cp .env.example .env
+cp backend/.env.template backend/.env
 ```
 
 Modify if needed.
@@ -157,8 +158,15 @@ Log rotation is enabled to prevent excessive disk usage.
 Logs can be accessed via:
 
 ```bash
-docker logs backend
-docker logs frontend
+docker logs conduit_backend
+docker logs conduit_frontend
+```
+
+Logs can optionally be persisted by redirecting Docker logs to a file.
+
+```
+docker logs conduit_backend > conduit_backend-logs.txt
+docker logs conduit_frontend > conduit_frontend-logs.txt
 ```
 
 ## Contact
@@ -175,7 +183,3 @@ docker logs frontend
 ### 💻 Project Repository
 
 - https://github.com/BenjaminTietz/conduit-container
-
-```
-
-```
