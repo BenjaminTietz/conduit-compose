@@ -10,7 +10,7 @@ services:
       - db
     volumes:
       - backend_static:/app/staticfiles
-    restart: always
+    restart: unless-stopped
 
   frontend:
     build:
@@ -20,7 +20,7 @@ services:
       - "8282:80"
     depends_on:
       - backend
-    restart: always
+    restart: unless-stopped
 
   db:
     image: postgres:15-alpine
