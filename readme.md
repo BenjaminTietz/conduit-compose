@@ -166,6 +166,8 @@ docker logs conduit_frontend > conduit_frontend-logs.txt
 
 ### 👤 Personal
 
+Benjamin Tietz
+
 - Portfolio: https://benjamin-tietz.com
 - Mail: mail@benjamin-tietz.com
 
