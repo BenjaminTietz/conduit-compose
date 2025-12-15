@@ -1,3 +1,17 @@
+## ⚠️ Legal & Hosting Notice
+
+This project is intended for educational and local development purposes only.
+
+It is **not suitable for public hosting or production use**, as it does not
+provide any GDPR-compliant features such as:
+
+- Privacy policy
+- Legal notice / imprint
+- Consent handling for personal data
+
+Do not deploy or expose this application publicly without adding the
+required legal and compliance-related components.
+
 # Conduit Containerized
 
 ## Table of Contents
@@ -21,20 +35,6 @@ with a focus on understanding how frontend and backend services
 communicate in a real-world (and partly legacy) project.
 
 ---
-
-## ⚠️ Legal & Hosting Notice
-
-This project is intended for educational and local development purposes only.
-
-It is **not suitable for public hosting or production use**, as it does not
-provide any GDPR-compliant features such as:
-
-- Privacy policy
-- Legal notice / imprint
-- Consent handling for personal data
-
-Do not deploy or expose this application publicly without adding the
-required legal and compliance-related components.
 
 ## Project Structure
 
@@ -65,7 +65,7 @@ If you forgot `--recurse-submodules`:
 git submodule update --init --recursive
 ```
 
----
+# The submodule configuration does not rely on the default branches of the included repositories
 
 ### 2. Create your environment file
 
@@ -177,4 +177,4 @@ Benjamin Tietz
 
 ### 💻 Project Repository
 
-- https://github.com/BenjaminTietz/conduit-container
+- https://github.com/BenjaminTietz/conduit-compose
