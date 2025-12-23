@@ -11,6 +11,8 @@ services:
     volumes:
       - backend_static:/app/staticfiles
     restart: on-failure
+    networks:
+      - conduit-network
 
   frontend:
     build:
@@ -25,18 +27,24 @@ services:
     depends_on:
       - backend
     restart: on-failure
+    networks:
+      - conduit-network
 
   db:
     image: postgres:15-alpine
     container_name: conduit_db
-    environment:
-      POSTGRES_DB: conduit
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+    env_file:
+      - .env
     volumes:
       - db_data:/var/lib/postgresql/data
-    restart: always
+    restart: on-failure
+    networks:
+      - conduit-network
 
 volumes:
   db_data:
   backend_static:
+
+networks:
+  conduit-network:
+    driver: bridge

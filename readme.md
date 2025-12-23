@@ -1,3 +1,17 @@
+## ⚠️ Legal & Hosting Notice
+
+This project is intended for educational and local development purposes only.
+
+It is **not suitable for public hosting or production use**, as it does not
+provide any GDPR-compliant features such as:
+
+- Privacy policy
+- Legal notice / imprint
+- Consent handling for personal data
+
+Do not deploy or expose this application publicly without adding the
+required legal and compliance-related components.
+
 # Conduit Containerized
 
 ## Table of Contents
@@ -21,20 +35,6 @@ with a focus on understanding how frontend and backend services
 communicate in a real-world (and partly legacy) project.
 
 ---
-
-## ⚠️ Legal & Hosting Notice
-
-This project is intended for educational and local development purposes only.
-
-It is **not suitable for public hosting or production use**, as it does not
-provide any GDPR-compliant features such as:
-
-- Privacy policy
-- Legal notice / imprint
-- Consent handling for personal data
-
-Do not deploy or expose this application publicly without adding the
-required legal and compliance-related components.
 
 ## Project Structure
 
@@ -64,8 +64,6 @@ If you forgot `--recurse-submodules`:
 ```sh
 git submodule update --init --recursive
 ```
-
----
 
 ### 2. Create your environment file
 
@@ -110,11 +108,11 @@ DJANGO_ALLOWED_HOSTS=*
 
 CORS_ALLOWED_ORIGINS=http://localhost:8282,http://127.0.0.1:8282
 
-DB_NAME=conduit
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_HOST=db
-DB_PORT=5432
+POSTGRES_NAME=conduit
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
 
 ```
 
@@ -166,6 +164,8 @@ docker logs conduit_frontend > conduit_frontend-logs.txt
 
 ### 👤 Personal
 
+Benjamin Tietz
+
 - Portfolio: https://benjamin-tietz.com
 - Mail: mail@benjamin-tietz.com
 
@@ -175,4 +175,4 @@ docker logs conduit_frontend > conduit_frontend-logs.txt
 
 ### 💻 Project Repository
 
-- https://github.com/BenjaminTietz/conduit-container
+- https://github.com/BenjaminTietz/conduit-compose
