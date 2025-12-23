@@ -65,8 +65,6 @@ If you forgot `--recurse-submodules`:
 git submodule update --init --recursive
 ```
 
-# The submodule configuration does not rely on the default branches of the included repositories
-
 ### 2. Create your environment file
 
 All backend and frontend configuration values are defined in a single `.env`
